@@ -16,6 +16,10 @@
 		AD668A412105D7C90066B0EC /* LeisureMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD668A402105D7C90066B0EC /* LeisureMapUITests.swift */; };
 		AD668A502105DB030066B0EC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD668A4F2105DB030066B0EC /* SplashViewController.swift */; };
 		AD668A562105DBFE0066B0EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD668A552105DBFE0066B0EC /* LoginViewController.swift */; };
+		AD693E51210858B800AC26D3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD693E50210858B800AC26D3 /* MasterViewController.swift */; };
+		AD693E53210858D000AC26D3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD693E52210858D000AC26D3 /* DetailViewController.swift */; };
+		AD693E562108590D00AC26D3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD693E552108590D00AC26D3 /* MapViewController.swift */; };
+		AD693E592108592D00AC26D3 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD693E582108592D00AC26D3 /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		AD668A4E2105D93A0066B0EC /* LeisureMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LeisureMap.entitlements; sourceTree = "<group>"; };
 		AD668A4F2105DB030066B0EC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AD668A552105DBFE0066B0EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AD693E50210858B800AC26D3 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		AD693E52210858D000AC26D3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AD693E552108590D00AC26D3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AD693E582108592D00AC26D3 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,9 @@
 		AD668A1F2105D7C40066B0EC /* LeisureMap */ = {
 			isa = PBXGroup;
 			children = (
+				AD693E572108591100AC26D3 /* NoteFlow */,
+				AD693E54210858D700AC26D3 /* MapFlow */,
+				AD693E4F2108587D00AC26D3 /* MasterDetail */,
 				AD668A542105DBDC0066B0EC /* LoginFlow */,
 				AD668A4E2105D93A0066B0EC /* LeisureMap.entitlements */,
 				AD668A202105D7C40066B0EC /* AppDelegate.swift */,
@@ -139,6 +150,31 @@
 				AD668A552105DBFE0066B0EC /* LoginViewController.swift */,
 			);
 			path = LoginFlow;
+			sourceTree = "<group>";
+		};
+		AD693E4F2108587D00AC26D3 /* MasterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AD693E50210858B800AC26D3 /* MasterViewController.swift */,
+				AD693E52210858D000AC26D3 /* DetailViewController.swift */,
+			);
+			path = MasterDetail;
+			sourceTree = "<group>";
+		};
+		AD693E54210858D700AC26D3 /* MapFlow */ = {
+			isa = PBXGroup;
+			children = (
+				AD693E552108590D00AC26D3 /* MapViewController.swift */,
+			);
+			path = MapFlow;
+			sourceTree = "<group>";
+		};
+		AD693E572108591100AC26D3 /* NoteFlow */ = {
+			isa = PBXGroup;
+			children = (
+				AD693E582108592D00AC26D3 /* NoteViewController.swift */,
+			);
+			path = NoteFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,10 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD693E592108592D00AC26D3 /* NoteViewController.swift in Sources */,
+				AD693E51210858B800AC26D3 /* MasterViewController.swift in Sources */,
 				AD668A562105DBFE0066B0EC /* LoginViewController.swift in Sources */,
 				AD668A502105DB030066B0EC /* SplashViewController.swift in Sources */,
+				AD693E53210858D000AC26D3 /* DetailViewController.swift in Sources */,
 				AD668A232105D7C40066B0EC /* ViewController.swift in Sources */,
 				AD668A212105D7C40066B0EC /* AppDelegate.swift in Sources */,
+				AD693E562108590D00AC26D3 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

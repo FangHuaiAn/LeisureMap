@@ -1,24 +1,19 @@
 //
-//  SplashViewController.swift
+//  DetailViewController.swift
 //  LeisureMap
 //
-//  Created by stu1 on 2018/7/23.
+//  Created by stu1 on 2018/7/25.
 //  Copyright © 2018年 tripim. All rights reserved.
 //
 
 import UIKit
 
-class SplashViewController: UIViewController {
-    
+class DetailViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //
-        
-        let defaults : UserDefaults = UserDefaults.standard
-        
-        
-        defaults.synchronize()
+        // Do any additional setup after loading the view.
     }
     
 
