@@ -95,7 +95,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fhO-iM-5F2"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="btnLoginClicked:" destination="9By-SQ-uZ0" eventType="touchUpInside" id="gFg-yC-7Gy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

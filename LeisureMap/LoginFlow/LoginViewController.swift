@@ -8,18 +8,64 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
-
+class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDelegate {
+    
     @IBOutlet weak var txtAccount: UITextField!
     
     @IBOutlet weak var txtPassword: UITextField!
     
     @IBOutlet weak var btnLogin: UIButton!
     
+    var requestWorker : AsyncRequestWorker?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // http://score.azurewebsites.net/api/login/acc/pwd
+        
+        requestWorker = AsyncRequestWorker()
+        requestWorker?.reponseDelegate = self
+        
+
+        print("viewDidLoad")
+        
+    }
+    
+    @IBAction func btnLoginClicked(_ sender: Any) {
+        
+        let account = txtAccount.text!
+        let password = txtPassword.text!
+        
+        let from = "https://score.azurewebsites.net/api/login/\( account )/\( password )"
+
+        self.requestWorker?.getResponse(from: from, tag: 1)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print("viewDidAppear")
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("viewWillDisappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        print("viewDidDisappear")
     }
     
 
@@ -79,6 +125,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    
+    // MARK: AsyncResponseDelegate
+    
+    func receviedReponse(_ sender: AsyncRequestWorker, responseString: String, tag: Int) {
+        print(responseString)
+        
+        
+//        DispatchQueue.main.async {
+//            self.performSegue(withIdentifier: "moveToLoginViewSegue", sender: self)
+//        }
+        
     }
 
 }
