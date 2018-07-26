@@ -8,17 +8,35 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: UIViewController, AsyncReponseDelegate {
+    
+    var requestWorker : AsyncRequestWorker?
+    
+   
+    var appVersion : String = ""
+    
+    @IBOutlet weak var lbVersion: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
+        
+        
+        
         //
+        appVersion = "" + (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)!
         
-        let defaults : UserDefaults = UserDefaults.standard
+        lbVersion.text = appVersion
         
+        //
+        requestWorker = AsyncRequestWorker()
+        requestWorker?.reponseDelegate = self
         
-        defaults.synchronize()
+        let from = "https://score.azurewebsites.net/api/version/\(  String( describing: appVersion) )"
+        
+        self.requestWorker?.getResponse(from: from, tag: 1)
+        
     }
     
 
@@ -31,5 +49,23 @@ class SplashViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: AsyncResponseDelegate
+    
+    func receviedReponse(_ sender: AsyncRequestWorker, responseString: String, tag: Int) {
+        print(responseString)
+        
+        //
+        let defaults : UserDefaults = UserDefaults.standard
+        
+        defaults.set(responseString, forKey: "serviceVersion")
+        
+        defaults.synchronize()
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "moveToLoginViewSegue", sender: self)
+        }
+        
+    }
 
 }

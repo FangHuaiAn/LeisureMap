@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD3E90B7210965F800F2519F /* NetWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E90B6210965F800F2519F /* NetWorker.swift */; };
 		AD668A212105D7C40066B0EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD668A202105D7C40066B0EC /* AppDelegate.swift */; };
 		AD668A232105D7C40066B0EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD668A222105D7C40066B0EC /* ViewController.swift */; };
 		AD668A262105D7C40066B0EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD668A242105D7C40066B0EC /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD3E90B6210965F800F2519F /* NetWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorker.swift; sourceTree = "<group>"; };
 		AD668A1D2105D7C40066B0EC /* LeisureMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeisureMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD668A202105D7C40066B0EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD668A222105D7C40066B0EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD3E90B32109613700F2519F /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				AD3E90B6210965F800F2519F /* NetWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		AD668A142105D7C40066B0EC = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		AD668A1F2105D7C40066B0EC /* LeisureMap */ = {
 			isa = PBXGroup;
 			children = (
+				AD3E90B32109613700F2519F /* Worker */,
 				AD693E572108591100AC26D3 /* NoteFlow */,
 				AD693E54210858D700AC26D3 /* MapFlow */,
 				AD693E4F2108587D00AC26D3 /* MasterDetail */,
@@ -321,6 +332,7 @@
 				AD668A232105D7C40066B0EC /* ViewController.swift in Sources */,
 				AD668A212105D7C40066B0EC /* AppDelegate.swift in Sources */,
 				AD693E562108590D00AC26D3 /* MapViewController.swift in Sources */,
+				AD3E90B7210965F800F2519F /* NetWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
