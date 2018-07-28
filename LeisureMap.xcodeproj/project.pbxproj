@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1E775892B08F8E8E991731F5 /* Pods_LeisureMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89FE970331C6294D9D0CB7 /* Pods_LeisureMapTests.framework */; };
 		3346C59265546026FB819604 /* Pods_LeisureMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B0245B6CC28C8CBA0F0AA /* Pods_LeisureMapUITests.framework */; };
+		AD044835210AAA80008831E0 /* ServiceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044834210AAA80008831E0 /* ServiceCategory.swift */; };
+		AD044837210AAB57008831E0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044836210AAB57008831E0 /* Store.swift */; };
+		AD044839210ABEE2008831E0 /* SQLiteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044838210ABEE2008831E0 /* SQLiteWorker.swift */; };
+		AD04483C210AFFC4008831E0 /* ServiceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04483B210AFFC4008831E0 /* ServiceCellView.swift */; };
+		AD044840210B09D3008831E0 /* StoreCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04483F210B09D3008831E0 /* StoreCellView.swift */; };
 		AD3E90B7210965F800F2519F /* NetWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E90B6210965F800F2519F /* NetWorker.swift */; };
 		AD668A212105D7C40066B0EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD668A202105D7C40066B0EC /* AppDelegate.swift */; };
 		AD668A232105D7C40066B0EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD668A222105D7C40066B0EC /* ViewController.swift */; };
@@ -53,6 +58,11 @@
 		8025FD01A7566C09ADA1275A /* Pods-LeisureMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapUITests/Pods-LeisureMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8651CB4BA879CA2F0F1F4E73 /* Pods-LeisureMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapTests/Pods-LeisureMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		94581ABFA0EBD66636B24EB4 /* Pods-LeisureMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapTests/Pods-LeisureMapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD044834210AAA80008831E0 /* ServiceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCategory.swift; sourceTree = "<group>"; };
+		AD044836210AAB57008831E0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		AD044838210ABEE2008831E0 /* SQLiteWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteWorker.swift; sourceTree = "<group>"; };
+		AD04483B210AFFC4008831E0 /* ServiceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellView.swift; sourceTree = "<group>"; };
+		AD04483F210B09D3008831E0 /* StoreCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCellView.swift; sourceTree = "<group>"; };
 		AD3E90B6210965F800F2519F /* NetWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorker.swift; sourceTree = "<group>"; };
 		AD668A1D2105D7C40066B0EC /* LeisureMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeisureMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD668A202105D7C40066B0EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,9 +139,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD044833210AA9DA008831E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD044834210AAA80008831E0 /* ServiceCategory.swift */,
+				AD044836210AAB57008831E0 /* Store.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AD04483A210AFF27008831E0 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				AD04483B210AFFC4008831E0 /* ServiceCellView.swift */,
+				AD04483F210B09D3008831E0 /* StoreCellView.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		AD3E90B32109613700F2519F /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				AD044838210ABEE2008831E0 /* SQLiteWorker.swift */,
 				AD3E90B6210965F800F2519F /* NetWorker.swift */,
 				ADDE451D2109CF2300277E8E /* FileWorker.swift */,
 			);
@@ -163,6 +192,7 @@
 		AD668A1F2105D7C40066B0EC /* LeisureMap */ = {
 			isa = PBXGroup;
 			children = (
+				AD044833210AA9DA008831E0 /* Model */,
 				AD3E90B32109613700F2519F /* Worker */,
 				AD693E572108591100AC26D3 /* NoteFlow */,
 				AD693E54210858D700AC26D3 /* MapFlow */,
@@ -209,6 +239,7 @@
 		AD693E4F2108587D00AC26D3 /* MasterDetail */ = {
 			isa = PBXGroup;
 			children = (
+				AD04483A210AFF27008831E0 /* CellView */,
 				AD693E50210858B800AC26D3 /* MasterViewController.swift */,
 				AD693E52210858D000AC26D3 /* DetailViewController.swift */,
 			);
@@ -410,11 +441,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LeisureMap/Pods-LeisureMap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -449,14 +482,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD693E592108592D00AC26D3 /* NoteViewController.swift in Sources */,
+				AD044835210AAA80008831E0 /* ServiceCategory.swift in Sources */,
 				AD693E51210858B800AC26D3 /* MasterViewController.swift in Sources */,
+				AD044837210AAB57008831E0 /* Store.swift in Sources */,
 				AD668A562105DBFE0066B0EC /* LoginViewController.swift in Sources */,
+				AD044840210B09D3008831E0 /* StoreCellView.swift in Sources */,
+				AD044839210ABEE2008831E0 /* SQLiteWorker.swift in Sources */,
 				ADDE451E2109CF2300277E8E /* FileWorker.swift in Sources */,
 				AD668A502105DB030066B0EC /* SplashViewController.swift in Sources */,
 				AD693E53210858D000AC26D3 /* DetailViewController.swift in Sources */,
 				AD668A232105D7C40066B0EC /* ViewController.swift in Sources */,
 				AD668A212105D7C40066B0EC /* AppDelegate.swift in Sources */,
 				AD693E562108590D00AC26D3 /* MapViewController.swift in Sources */,
+				AD04483C210AFFC4008831E0 /* ServiceCellView.swift in Sources */,
 				AD3E90B7210965F800F2519F /* NetWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

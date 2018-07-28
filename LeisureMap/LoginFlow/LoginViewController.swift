@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDelegate, FileWorkerDelegate {
     
+
     @IBOutlet weak var txtAccount: UITextField!
     
     @IBOutlet weak var txtPassword: UITextField!
@@ -18,30 +20,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
     
     var requestWorker : AsyncRequestWorker?
     
+    var fileWorker : FileWorker?
+    let storeFileName : String = "store.json"
+    
+    // MARK: - Views' Event
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // http://score.azurewebsites.net/api/login/acc/pwd
-        
         requestWorker = AsyncRequestWorker()
         requestWorker?.reponseDelegate = self
+        
+        fileWorker = FileWorker()
+        fileWorker?.fileWorkerDelegate = self
         
 
         print("viewDidLoad")
         
     }
-    
-    @IBAction func btnLoginClicked(_ sender: Any) {
-        
-        let account = txtAccount.text!
-        let password = txtPassword.text!
-        
-        let from = "https://score.azurewebsites.net/api/login/\( account )/\( password )"
-
-        self.requestWorker?.getResponse(from: from, tag: 1)
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -68,6 +64,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
         print("viewDidDisappear")
     }
     
+    // MARK: - UITextFieldDelegate
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
@@ -128,15 +125,111 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
     }
     
     
-    // MARK: AsyncResponseDelegate
+    // MARK: - AsyncResponseDelegate
+    
+    
+    @IBAction func btnLoginClicked(_ sender: Any) {
+        
+        let account = txtAccount.text!
+        let password = txtPassword.text!
+        
+        let from = "https://score.azurewebsites.net/api/login/\( account )/\( password )"
+        
+        self.requestWorker?.getResponse(from: from, tag: 1)
+    }
+    
+    func readServiceCategory()  {
+        let from = "https://score.azurewebsites.net/api/ServiceCategory"
+        
+        self.requestWorker?.getResponse(from: from, tag: 2)
+    }
+    
+    func readStore()  {
+        let from = "https://score.azurewebsites.net/api/store"
+        
+        self.requestWorker?.getResponse(from: from, tag: 3)
+    }
     
     func receviedReponse(_ sender: AsyncRequestWorker, responseString: String, tag: Int) {
-        print(responseString)
+        
+        //print( "\( tag ):\( responseString )" )
         
         
-//        DispatchQueue.main.async {
-//            self.performSegue(withIdentifier: "moveToLoginViewSegue", sender: self)
-//        }
+        switch tag {
+        case 1:
+            // login
+            self.readServiceCategory()
+            break
+        case 2:
+            // ServiceCategory
+            
+            do{
+                
+                if let dataFromString = responseString.data(using: .utf8, allowLossyConversion: false) {
+                    
+                    let json = try JSON(data: dataFromString)
+                    
+                    
+                    let sqliteContext = SQLiteWorker()
+                    sqliteContext.createDatabase()
+                    
+                    sqliteContext.clearAll()
+                    
+                    
+                    for (_ ,subJson):(String, JSON) in json {
+                        
+                        let name : String = subJson["name"].stringValue
+                        let imagePath : String = subJson["imagePath"].stringValue
+                        
+                        sqliteContext.insertData(_name: name, _imagepath: imagePath)
+                        
+                    }
+                    
+//                    let categories = sqliteContext.readData()
+//                    print(categories)
+                    
+                }
+                
+            }catch{
+                print(error)
+            }
+            
+            
+            
+            
+            //
+            self.readStore()
+            break
+        case 3:
+            
+            //
+            
+            // {"serviceIndex":0,"name":"Cafe00","location":{"address":"","latitude":0.0,"longitude":0.0},"index":0,"imagePath":""}
+            
+
+            
+            
+            self.fileWorker?.writeToFile(content: responseString, fileName: storeFileName, tag: 1)
+            
+            break
+        default:
+            break
+        }
+    }
+    
+    // MARK: - FileWorkerDelegate
+    
+    func fileWorkWriteCompleted(_ sender: FileWorker, fileName: String, tag: Int) {
+        
+        print(fileName)
+        
+        // store
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "moveToMasterViewSegue", sender: self)
+        }
+    }
+    
+    func fileWorkReadCompleted(_ sender: FileWorker, content: String, tag: Int) {
         
     }
 
