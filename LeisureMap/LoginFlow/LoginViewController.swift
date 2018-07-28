@@ -49,6 +49,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
         super.viewDidAppear(animated)
         
         print("viewDidAppear")
+        
+        txtAccount.becomeFirstResponder()
     }
     
     

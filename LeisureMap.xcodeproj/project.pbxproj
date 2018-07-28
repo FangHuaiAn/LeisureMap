@@ -28,6 +28,8 @@
 		AD693E53210858D000AC26D3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD693E52210858D000AC26D3 /* DetailViewController.swift */; };
 		AD693E562108590D00AC26D3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD693E552108590D00AC26D3 /* MapViewController.swift */; };
 		AD693E592108592D00AC26D3 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD693E582108592D00AC26D3 /* NoteViewController.swift */; };
+		AD7594F6210C528500653986 /* abc.edu.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AD7594F5210C528400653986 /* abc.edu.gpx */; };
+		AD7594F8210C69D400653986 /* MapFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7594F7210C69D400653986 /* MapFlag.swift */; };
 		ADDE451E2109CF2300277E8E /* FileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE451D2109CF2300277E8E /* FileWorker.swift */; };
 		B26206FAE9EAF09429AC73ED /* Pods_LeisureMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39065111F89BA4EE5E558F58 /* Pods_LeisureMap.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,8 @@
 		AD693E52210858D000AC26D3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AD693E552108590D00AC26D3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AD693E582108592D00AC26D3 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		AD7594F5210C528400653986 /* abc.edu.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = abc.edu.gpx; sourceTree = "<group>"; };
+		AD7594F7210C69D400653986 /* MapFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFlag.swift; sourceTree = "<group>"; };
 		ADDE451D2109CF2300277E8E /* FileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWorker.swift; sourceTree = "<group>"; };
 		BF8B0245B6CC28C8CBA0F0AA /* Pods_LeisureMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeisureMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,6 +174,7 @@
 		AD668A142105D7C40066B0EC = {
 			isa = PBXGroup;
 			children = (
+				AD7594F5210C528400653986 /* abc.edu.gpx */,
 				AD668A1F2105D7C40066B0EC /* LeisureMap */,
 				AD668A342105D7C90066B0EC /* LeisureMapTests */,
 				AD668A3F2105D7C90066B0EC /* LeisureMapUITests */,
@@ -249,6 +254,7 @@
 		AD693E54210858D700AC26D3 /* MapFlow */ = {
 			isa = PBXGroup;
 			children = (
+				AD7594F7210C69D400653986 /* MapFlag.swift */,
 				AD693E552108590D00AC26D3 /* MapViewController.swift */,
 			);
 			path = MapFlow;
@@ -377,6 +383,7 @@
 			files = (
 				AD668A2B2105D7C90066B0EC /* LaunchScreen.storyboard in Resources */,
 				AD668A282105D7C90066B0EC /* Assets.xcassets in Resources */,
+				AD7594F6210C528500653986 /* abc.edu.gpx in Resources */,
 				AD668A262105D7C40066B0EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7594F8210C69D400653986 /* MapFlag.swift in Sources */,
 				AD693E592108592D00AC26D3 /* NoteViewController.swift in Sources */,
 				AD044835210AAA80008831E0 /* ServiceCategory.swift in Sources */,
 				AD693E51210858B800AC26D3 /* MasterViewController.swift in Sources */,

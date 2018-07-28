@@ -134,7 +134,37 @@
                     <view key="view" contentMode="scaleToFill" id="fKX-jc-d0j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GP-n6-dAw">
+                                <rect key="frame" x="16" y="94" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uop-re-OKI"/>
+                                </constraints>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <action selector="btnMapClicked:" destination="cie-94-BaI" eventType="touchUpInside" id="LV0-bv-lyU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1N-tT-b8W">
+                                <rect key="frame" x="16" y="169" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OjR-f6-fyP"/>
+                                </constraints>
+                                <state key="normal" title="Web"/>
+                                <connections>
+                                    <action selector="btnWebClicked:" destination="cie-94-BaI" eventType="touchUpInside" id="5rk-68-AUH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a1N-tT-b8W" firstAttribute="top" secondItem="9GP-n6-dAw" secondAttribute="bottom" constant="45" id="1HU-lY-vdC"/>
+                            <constraint firstItem="9GP-n6-dAw" firstAttribute="top" secondItem="qLo-dv-Txj" secondAttribute="top" constant="30" id="FRZ-HM-krn"/>
+                            <constraint firstItem="a1N-tT-b8W" firstAttribute="leading" secondItem="qLo-dv-Txj" secondAttribute="leading" constant="16" id="J3e-Ul-XIE"/>
+                            <constraint firstItem="qLo-dv-Txj" firstAttribute="trailing" secondItem="9GP-n6-dAw" secondAttribute="trailing" constant="16" id="YeT-QN-Owx"/>
+                            <constraint firstItem="9GP-n6-dAw" firstAttribute="leading" secondItem="qLo-dv-Txj" secondAttribute="leading" constant="16" id="bNw-q3-QRB"/>
+                            <constraint firstItem="qLo-dv-Txj" firstAttribute="trailing" secondItem="a1N-tT-b8W" secondAttribute="trailing" constant="16" id="mEA-H2-2Ir"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qLo-dv-Txj"/>
                     </view>
                     <connections>
@@ -267,6 +297,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="lSm-pT-zB6"/>
                     <connections>
+                        <outlet property="storeTable" destination="4b6-3x-s6J" id="zEG-7P-Y3z"/>
                         <segue destination="cie-94-BaI" kind="show" identifier="moveToDetailViewSegue" id="GM7-lW-jjx"/>
                     </connections>
                 </viewController>
@@ -279,11 +310,12 @@
             <objects>
                 <viewController id="i9g-3V-4eJ" customClass="NoteViewController" customModule="LeisureMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g2C-tb-nEd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qvv-jJ-dKF"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMg-Ts-fZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,11 +326,29 @@
             <objects>
                 <viewController id="cTr-6Q-Rha" customClass="MapViewController" customModule="LeisureMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="15X-UD-pAW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XER-DV-t72">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cTr-6Q-Rha" id="JYH-36-e0V"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XER-DV-t72" firstAttribute="trailing" secondItem="Wp6-tu-buf" secondAttribute="trailing" id="Cfg-Dd-SQD"/>
+                            <constraint firstItem="XER-DV-t72" firstAttribute="leading" secondItem="Wp6-tu-buf" secondAttribute="leading" id="F8T-3X-NXk"/>
+                            <constraint firstItem="XER-DV-t72" firstAttribute="bottom" secondItem="Wp6-tu-buf" secondAttribute="bottom" id="WJv-PJ-LaI"/>
+                            <constraint firstItem="XER-DV-t72" firstAttribute="top" secondItem="Wp6-tu-buf" secondAttribute="top" id="Zkt-JQ-lkn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Wp6-tu-buf"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="mapView" destination="XER-DV-t72" id="2OB-4r-7Wu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9W-Qb-HhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
