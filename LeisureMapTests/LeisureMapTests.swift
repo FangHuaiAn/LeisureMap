@@ -11,25 +11,39 @@ import XCTest
 
 class LeisureMapTests: XCTestCase {
     
+    var sqliteWorker : SQLiteWorker?
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        //
+        sqliteWorker = SQLiteWorker()
+        sqliteWorker?.createDatabase()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        //
         super.tearDown()
+        
+        sqliteWorker?.clearAll()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInsert() {
+        //
+        
+        sqliteWorker?.insertData(_name: "service01", _imagepath: "imagepath")
+        
+        let results = sqliteWorker?.readData()
+        
+        XCTAssert(results?.count == 1, "passed")
+        
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            sqliteWorker?.insertData(_name: "service01", _imagepath: "imagepath")
+            
+            _ = sqliteWorker?.readData()
         }
     }
     
