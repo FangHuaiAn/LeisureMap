@@ -98,14 +98,14 @@ class WebViewController: UIViewController
         
         let alert = UIAlertController(title: "JavaScriptAlertPanel", message: "\( message )", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler:{
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: "Confirm"), style: .default, handler:{
             ( act : UIAlertAction  )
             in
             
             print("Confirm pressed")
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .default, handler: nil))
         
         
         
@@ -117,7 +117,7 @@ class WebViewController: UIViewController
         
         var txt : UITextField?
         
-        let alert = UIAlertController(title: prompt, message: "Input Text", preferredStyle: .alert)
+        let alert = UIAlertController(title: prompt, message: NSLocalizedString("Input Text", comment: "Input Text"), preferredStyle: .alert)
         
         
         alert.addTextField(configurationHandler: {
@@ -129,7 +129,7 @@ class WebViewController: UIViewController
         })
         
         
-        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: "Confirm"), style: .default, handler: {
             (act : UIAlertAction)
             in
             
@@ -137,7 +137,7 @@ class WebViewController: UIViewController
             
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style:  .default , handler: {
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style:  .default , handler: {
             ( act : UIAlertAction)
             in
             
