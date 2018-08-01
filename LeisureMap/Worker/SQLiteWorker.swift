@@ -17,6 +17,7 @@ struct SQLiteWorker {
     
     private let categories = Table("servicecategory")
     private let id = Expression<Int>("id")
+    private let serviceId = Expression<Int>("serviceId")
     private let name = Expression<String>("name")
     private let imagepath = Expression<String>("imagepath")
     
@@ -36,11 +37,7 @@ struct SQLiteWorker {
         } catch { print(error) }
     }
     
-    func createDatabase()  {
-        createdTable()
-    }
-    
-    private func createdTable()  {
+    func createdTable()  {
         
         do{
             let count = try db.scalar(categories.count)
@@ -56,6 +53,7 @@ struct SQLiteWorker {
 
             try db.run(categories.create { t in
                 t.column(id, primaryKey: true)
+                t.column(serviceId)
                 t.column(name)
                 t.column(imagepath)
             })
@@ -72,9 +70,9 @@ struct SQLiteWorker {
     }
     
     //
-    func insertData(_name: String, _imagepath: String){
+    func insertData( _serviceId:Int, _name: String, _imagepath: String){
         do {
-            let insert = categories.insert(name <- _name, imagepath <- _imagepath)
+            let insert = categories.insert( serviceId <- _serviceId,  name <- _name, imagepath <- _imagepath)
             try db.run(insert)
         } catch {
             print(error)
@@ -90,7 +88,7 @@ struct SQLiteWorker {
             
             let serviceCategory = ServiceCategory()
             
-            serviceCategory.Index = category[id]
+            serviceCategory.Index = category[serviceId]
             serviceCategory.Name = category[name]
             serviceCategory.ImagePath = category[imagepath]
             
@@ -115,7 +113,7 @@ struct SQLiteWorker {
     
     //
     func delData(currcategoryIndex: Int) {
-        let currcategories = categories.filter(id == currcategoryIndex)
+        let currcategories = categories.filter(serviceId == currcategoryIndex)
         do {
             try db.run(currcategories.delete())
         } catch {

@@ -17,7 +17,7 @@ class LeisureMapTests: XCTestCase {
         super.setUp()
         //
         sqliteWorker = SQLiteWorker()
-        sqliteWorker?.createDatabase()
+        sqliteWorker?.createdTable()
     }
     
     override func tearDown() {

@@ -69,7 +69,7 @@ class MasterViewController: UIViewController, FileWorkerDelegate, UICollectionVi
         
         for store in stores {
             
-            let idx : Int = category.Index - 1
+            let idx : Int = category.Index
             
             if( store.ServiceIndex == idx ){
                 displayStores.append(store)

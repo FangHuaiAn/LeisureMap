@@ -179,17 +179,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
                     
                     
                     let sqliteContext = SQLiteWorker()
-                    sqliteContext.createDatabase()
+                    sqliteContext.createdTable()
                     
                     sqliteContext.clearAll()
                     
                     
                     for (_ ,subJson):(String, JSON) in json {
                         
+                        let serviceId : Int = subJson["index"].intValue
                         let name : String = subJson["name"].stringValue
                         let imagePath : String = subJson["imagePath"].stringValue
                         
-                        sqliteContext.insertData(_name: name, _imagepath: imagePath)
+                        sqliteContext.insertData( _serviceId: serviceId, _name: name, _imagepath: imagePath)
                         
                     }
                     
