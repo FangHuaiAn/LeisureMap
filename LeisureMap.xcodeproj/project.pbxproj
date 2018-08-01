@@ -61,6 +61,9 @@
 		743B8D7CD1499CBDF6D55F9F /* Pods-LeisureMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMap/Pods-LeisureMap.debug.xcconfig"; sourceTree = "<group>"; };
 		8025FD01A7566C09ADA1275A /* Pods-LeisureMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapUITests/Pods-LeisureMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8651CB4BA879CA2F0F1F4E73 /* Pods-LeisureMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapTests/Pods-LeisureMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B227ED12111A6F2001C59A9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8B227ED22111A6F3001C59A9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		8B227ED32111A6F3001C59A9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8B78945721119B6200AE7D6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8B78946721119F3B00AE7D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B78946821119F3B00AE7D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -369,6 +372,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = AD668A142105D7C40066B0EC;
 			productRefGroup = AD668A1E2105D7C40066B0EC /* Products */;
@@ -551,6 +555,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8B78945721119B6200AE7D6F /* en */,
+				8B227ED32111A6F3001C59A9 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -559,6 +564,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8B78946821119F3B00AE7D6F /* Base */,
+				8B227ED22111A6F3001C59A9 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8B78946721119F3B00AE7D6F /* Base */,
+				8B227ED12111A6F2001C59A9 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

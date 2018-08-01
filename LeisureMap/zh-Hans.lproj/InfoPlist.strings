@@ -7,3 +7,7 @@
 */
 "CFBundleDisplayName" = "休闲地图" ;
 "CFBundleName" = "休闲地图" ;
+"NSLocationWhenInUseUsageDescription" = "求允许" ;
+"NSLocationUsageDescription" = "求允许" ;
+"NSLocationAlwaysUsageDescription" = "求允许" ;
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "求允许";
