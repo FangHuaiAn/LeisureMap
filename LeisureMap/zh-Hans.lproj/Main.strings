@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "Move To Map"; ObjectID = "9GP-n6-dAw"; */
+"9GP-n6-dAw.normalTitle" = "移动到地图";
+
+/* Class = "UILabel"; text = "version"; ObjectID = "BvX-M2-PLu"; */
+"BvX-M2-PLu.text" = "版本";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Djb-nk-mnv"; */
+"Djb-nk-mnv.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "Move To Web"; ObjectID = "a1N-tT-b8W"; */
+"a1N-tT-b8W.normalTitle" = "移动到 WebView";
+
+/* Class = "UILabel"; text = "Store Name"; ObjectID = "a3g-NQ-yQE"; */
+"a3g-NQ-yQE.text" = "商店名称";
+
+/* Class = "UIButton"; normalTitle = "Photo"; ObjectID = "hnj-NC-Hxe"; */
+"hnj-NC-Hxe.normalTitle" = "照片";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "r7H-rc-zjf"; */
+"r7H-rc-zjf.placeholder" = "密码";
+
+/* Class = "UITextField"; placeholder = "Account"; ObjectID = "saO-0X-AbG"; */
+"saO-0X-AbG.placeholder" = "帐户";
+
+/* Class = "UILabel"; text = "Service Name"; ObjectID = "v5C-Hx-4XN"; */
+"v5C-Hx-4XN.text" = "服务名称";

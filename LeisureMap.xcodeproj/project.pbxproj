@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1E775892B08F8E8E991731F5 /* Pods_LeisureMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89FE970331C6294D9D0CB7 /* Pods_LeisureMapTests.framework */; };
 		3346C59265546026FB819604 /* Pods_LeisureMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B0245B6CC28C8CBA0F0AA /* Pods_LeisureMapUITests.framework */; };
+		8B78945621119B6200AE7D6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B78945821119B6200AE7D6F /* InfoPlist.strings */; };
+		8B78945A21119BCE00AE7D6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B78945C21119BCE00AE7D6F /* Main.storyboard */; };
+		8B78945D21119BDB00AE7D6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B78945F21119BDB00AE7D6F /* LaunchScreen.storyboard */; };
 		AD044835210AAA80008831E0 /* ServiceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044834210AAA80008831E0 /* ServiceCategory.swift */; };
 		AD044837210AAB57008831E0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044836210AAB57008831E0 /* Store.swift */; };
 		AD044839210ABEE2008831E0 /* SQLiteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044838210ABEE2008831E0 /* SQLiteWorker.swift */; };
@@ -29,8 +32,6 @@
 		AD693E592108592D00AC26D3 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD693E582108592D00AC26D3 /* NoteViewController.swift */; };
 		AD7594F6210C528500653986 /* abc.edu.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AD7594F5210C528400653986 /* abc.edu.gpx */; };
 		AD7594F8210C69D400653986 /* MapFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7594F7210C69D400653986 /* MapFlag.swift */; };
-		ADB5EF27210D8CBB007197D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB5EF25210D8CBB007197D0 /* LaunchScreen.storyboard */; };
-		ADB5EF28210D8CBB007197D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB5EF26210D8CBB007197D0 /* Main.storyboard */; };
 		ADDE451E2109CF2300277E8E /* FileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE451D2109CF2300277E8E /* FileWorker.swift */; };
 		B26206FAE9EAF09429AC73ED /* Pods_LeisureMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39065111F89BA4EE5E558F58 /* Pods_LeisureMap.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,9 @@
 		743B8D7CD1499CBDF6D55F9F /* Pods-LeisureMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMap/Pods-LeisureMap.debug.xcconfig"; sourceTree = "<group>"; };
 		8025FD01A7566C09ADA1275A /* Pods-LeisureMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapUITests/Pods-LeisureMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8651CB4BA879CA2F0F1F4E73 /* Pods-LeisureMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapTests/Pods-LeisureMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B78945721119B6200AE7D6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8B78946721119F3B00AE7D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B78946821119F3B00AE7D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94581ABFA0EBD66636B24EB4 /* Pods-LeisureMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapTests/Pods-LeisureMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD044834210AAA80008831E0 /* ServiceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCategory.swift; sourceTree = "<group>"; };
 		AD044836210AAB57008831E0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -88,8 +92,6 @@
 		AD693E582108592D00AC26D3 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		AD7594F5210C528400653986 /* abc.edu.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = abc.edu.gpx; sourceTree = "<group>"; };
 		AD7594F7210C69D400653986 /* MapFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFlag.swift; sourceTree = "<group>"; };
-		ADB5EF25210D8CBB007197D0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ADB5EF26210D8CBB007197D0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ADDE451D2109CF2300277E8E /* FileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWorker.swift; sourceTree = "<group>"; };
 		BF8B0245B6CC28C8CBA0F0AA /* Pods_LeisureMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeisureMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,13 +208,14 @@
 				AD693E4F2108587D00AC26D3 /* MasterDetail */,
 				AD668A542105DBDC0066B0EC /* LoginFlow */,
 				AD668A4E2105D93A0066B0EC /* LeisureMap.entitlements */,
-				ADB5EF25210D8CBB007197D0 /* LaunchScreen.storyboard */,
-				ADB5EF26210D8CBB007197D0 /* Main.storyboard */,
+				8B78945F21119BDB00AE7D6F /* LaunchScreen.storyboard */,
+				8B78945C21119BCE00AE7D6F /* Main.storyboard */,
 				AD668A202105D7C40066B0EC /* AppDelegate.swift */,
 				AD668A222105D7C40066B0EC /* ViewController.swift */,
 				AD668A272105D7C90066B0EC /* Assets.xcassets */,
 				AD668A2C2105D7C90066B0EC /* Info.plist */,
 				AD668A4F2105DB030066B0EC /* SplashViewController.swift */,
+				8B78945821119B6200AE7D6F /* InfoPlist.strings */,
 			);
 			path = LeisureMap;
 			sourceTree = "<group>";
@@ -364,6 +367,8 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
+				Base,
 			);
 			mainGroup = AD668A142105D7C40066B0EC;
 			productRefGroup = AD668A1E2105D7C40066B0EC /* Products */;
@@ -382,10 +387,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADB5EF27210D8CBB007197D0 /* LaunchScreen.storyboard in Resources */,
+				8B78945D21119BDB00AE7D6F /* LaunchScreen.storyboard in Resources */,
 				AD668A282105D7C90066B0EC /* Assets.xcassets in Resources */,
 				AD7594F6210C528500653986 /* abc.edu.gpx in Resources */,
-				ADB5EF28210D8CBB007197D0 /* Main.storyboard in Resources */,
+				8B78945A21119BCE00AE7D6F /* Main.storyboard in Resources */,
+				8B78945621119B6200AE7D6F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +545,33 @@
 			targetProxy = AD668A3D2105D7C90066B0EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B78945821119B6200AE7D6F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B78945721119B6200AE7D6F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8B78945C21119BCE00AE7D6F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B78946821119F3B00AE7D6F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B78945F21119BDB00AE7D6F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B78946721119F3B00AE7D6F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AD668A432105D7C90066B0EC /* Debug */ = {

@@ -66,6 +66,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
         print("viewDidDisappear")
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
     // MARK: - UITextFieldDelegate
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

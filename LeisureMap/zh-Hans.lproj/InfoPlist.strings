@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  LeisureMap
+
+  Created by 房懷安 on 2018/8/1.
+  Copyright © 2018年 tripim. All rights reserved.
+*/
+"CFBundleDisplayName" = "休闲地图" ;
+"CFBundleName" = "休闲地图" ;
