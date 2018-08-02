@@ -9,7 +9,7 @@
 "Djb-nk-mnv.normalTitle" = "登录";
 
 /* Class = "UIButton"; normalTitle = "Move To Web"; ObjectID = "a1N-tT-b8W"; */
-"a1N-tT-b8W.normalTitle" = "移动到 WebView";
+"a1N-tT-b8W.normalTitle" = "移动到 Note";
 
 /* Class = "UILabel"; text = "Store Name"; ObjectID = "a3g-NQ-yQE"; */
 "a3g-NQ-yQE.text" = "商店名称";

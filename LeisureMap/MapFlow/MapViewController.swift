@@ -106,7 +106,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     @objc func moveToWebView( sender : UIButton ){
-        print("moveToWebView")
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "moveToWebViewSegue", sender: self)
+        }
+        
+        
     }
 
 

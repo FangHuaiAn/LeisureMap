@@ -152,7 +152,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OjR-f6-fyP"/>
                                 </constraints>
-                                <state key="normal" title="Move To Web"/>
+                                <state key="normal" title="Move To Note"/>
                                 <connections>
                                     <action selector="btnWebClicked:" destination="cie-94-BaI" eventType="touchUpInside" id="5rk-68-AUH"/>
                                 </connections>
