@@ -13,14 +13,14 @@ class MapFlag: NSObject, MKAnnotation {
     
     let title: String?
     let locationName: String
-    let discipline: String
+    let desc: String
     let coordinate: CLLocationCoordinate2D
     let urlString:String
     
-    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D, url : String) {
+    init(title: String, locationName: String, description: String, coordinate: CLLocationCoordinate2D, url : String) {
         self.title = title
         self.locationName = locationName
-        self.discipline = discipline
+        self.desc = description
         self.coordinate = coordinate
         self.urlString = url
         

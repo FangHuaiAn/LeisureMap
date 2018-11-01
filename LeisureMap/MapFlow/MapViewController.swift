@@ -19,7 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let locationManager = CLLocationManager()
     
     
-    let regionRadius : CLLocationDistance = 1000
+    let regionRadius : CLLocationDistance = 10000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +40,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //
         let flag = MapFlag(
-            title: "iOS App by Swift",
-            locationName: "ABC",
-            discipline: "Apple Room",
+            title: "客製化圖標",
+            locationName: "熱帶植物園",
+            description: "位於墾丁的熱帶植物園",
             coordinate: CLLocationCoordinate2D(
-                latitude: 31.29065118,
-                longitude: 118.3623587),
-            url: "https://apple.com")
+                latitude: 21.97,
+                longitude: 120.81),
+            url: "https://www.ktnp.gov.tw/Default.aspx")
         
         mapView.addAnnotation(flag)
-        //
+        
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -60,7 +60,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let identifier = "marker"
         let annotationView  : MKAnnotationView
-        
         
         if let dequeueView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
             dequeueView.annotation = annotation
@@ -79,9 +78,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
         }
         
-        
         return annotationView
-        
     }
     
     func centerMapOnLocation( location : CLLocation )  {
