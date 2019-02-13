@@ -102,7 +102,7 @@ class MasterViewController: UIViewController, FileWorkerDelegate, UICollectionVi
         super.viewDidLoad()
         
         //
-        let sqliteContext = StoreContext()
+        let sqliteContext = ServiceCategoryContext()
         let categoriesInSQLite = sqliteContext.readData()
         categories = categories + categoriesInSQLite
 

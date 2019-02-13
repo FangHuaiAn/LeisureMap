@@ -11,15 +11,15 @@ import UIKit
 import SQLite
 
 
-struct StoreContext {
-    
-    private var db: Connection!
+struct ServiceCategoryContext {
     
     private let categories = Table("servicecategory")
     private let id = Expression<Int>("id")
     private let serviceId = Expression<Int>("serviceId")
     private let name = Expression<String>("name")
     private let imagepath = Expression<String>("imagepath")
+    
+    private var db: Connection!
     
     init() {
         

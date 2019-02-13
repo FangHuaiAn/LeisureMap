@@ -178,7 +178,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
                     let json = try JSON(data: dataFromString)
                     
                     
-                    let sqliteContext = StoreContext()
+                    let sqliteContext = ServiceCategoryContext()
                     sqliteContext.createdTable()
                     
                     sqliteContext.clearAll()
