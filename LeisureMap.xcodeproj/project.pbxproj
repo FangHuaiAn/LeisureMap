@@ -16,7 +16,7 @@
 		8B78945D21119BDB00AE7D6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B78945F21119BDB00AE7D6F /* LaunchScreen.storyboard */; };
 		AD044835210AAA80008831E0 /* ServiceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044834210AAA80008831E0 /* ServiceCategory.swift */; };
 		AD044837210AAB57008831E0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044836210AAB57008831E0 /* Store.swift */; };
-		AD044839210ABEE2008831E0 /* SQLiteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044838210ABEE2008831E0 /* SQLiteWorker.swift */; };
+		AD044839210ABEE2008831E0 /* StoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD044838210ABEE2008831E0 /* StoreContext.swift */; };
 		AD04483C210AFFC4008831E0 /* ServiceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04483B210AFFC4008831E0 /* ServiceCellView.swift */; };
 		AD044840210B09D3008831E0 /* StoreCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04483F210B09D3008831E0 /* StoreCellView.swift */; };
 		AD12BA00210D43E700AB8D19 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD12B9FF210D43E700AB8D19 /* WebViewController.swift */; };
@@ -75,7 +75,7 @@
 		94581ABFA0EBD66636B24EB4 /* Pods-LeisureMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapTests/Pods-LeisureMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD044834210AAA80008831E0 /* ServiceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCategory.swift; sourceTree = "<group>"; };
 		AD044836210AAB57008831E0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		AD044838210ABEE2008831E0 /* SQLiteWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteWorker.swift; sourceTree = "<group>"; };
+		AD044838210ABEE2008831E0 /* StoreContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreContext.swift; sourceTree = "<group>"; };
 		AD04483B210AFFC4008831E0 /* ServiceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellView.swift; sourceTree = "<group>"; };
 		AD04483F210B09D3008831E0 /* StoreCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCellView.swift; sourceTree = "<group>"; };
 		AD12B9FF210D43E700AB8D19 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		AD3E90B32109613700F2519F /* Worker */ = {
 			isa = PBXGroup;
 			children = (
-				AD044838210ABEE2008831E0 /* SQLiteWorker.swift */,
+				AD044838210ABEE2008831E0 /* StoreContext.swift */,
 				AD3E90B6210965F800F2519F /* NetWorker.swift */,
 				ADDE451D2109CF2300277E8E /* FileWorker.swift */,
 			);
@@ -515,7 +515,7 @@
 				AD044837210AAB57008831E0 /* Store.swift in Sources */,
 				AD668A562105DBFE0066B0EC /* LoginViewController.swift in Sources */,
 				AD044840210B09D3008831E0 /* StoreCellView.swift in Sources */,
-				AD044839210ABEE2008831E0 /* SQLiteWorker.swift in Sources */,
+				AD044839210ABEE2008831E0 /* StoreContext.swift in Sources */,
 				ADDE451E2109CF2300277E8E /* FileWorker.swift in Sources */,
 				AD668A502105DB030066B0EC /* SplashViewController.swift in Sources */,
 				AD693E53210858D000AC26D3 /* DetailViewController.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 import SQLite
 
 
-struct SQLiteWorker {
+struct StoreContext {
     
     private var db: Connection!
     

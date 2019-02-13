@@ -10,7 +10,6 @@ import Foundation
 
 
 class Store {
-    // {"serviceIndex":0,"name":"Cafe00","location":{"address":"","latitude":0.0,"longitude":0.0},"index":0,"imagePath":""}
     
     var ServiceIndex : Int = 0
     var Name : String?

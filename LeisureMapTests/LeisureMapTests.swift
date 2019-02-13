@@ -11,12 +11,12 @@ import XCTest
 
 class LeisureMapTests: XCTestCase {
     
-    var sqliteWorker : SQLiteWorker?
+    var sqliteWorker : StoreContext?
     
     override func setUp() {
         super.setUp()
         //
-        sqliteWorker = SQLiteWorker()
+        sqliteWorker = StoreContext()
         sqliteWorker?.createdTable()
     }
     
