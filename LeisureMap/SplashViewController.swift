@@ -10,9 +10,6 @@ import UIKit
 
 class SplashViewController: UIViewController, AsyncReponseDelegate {
     
-    var requestWorker : AsyncRequestWorker?
-    
-   
     var appVersion : String = ""
     
     @IBOutlet weak var lbVersion: UILabel!
@@ -30,12 +27,11 @@ class SplashViewController: UIViewController, AsyncReponseDelegate {
         lbVersion.text = appVersion
         
         //
-        requestWorker = AsyncRequestWorker()
-        requestWorker?.reponseDelegate = self
+        AppDelegate.RequestWorker.reponseDelegate = self
         
         let from = "https://score.azurewebsites.net/api/version/\(  String( describing: appVersion) )"
         
-        self.requestWorker?.getResponse(from: from, tag: 1)
+        AppDelegate.RequestWorker.getResponse(from: from, tag: 1)
         
     }
     

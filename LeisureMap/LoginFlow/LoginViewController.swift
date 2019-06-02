@@ -18,8 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
     
     @IBOutlet weak var btnLogin: UIButton!
     
-    var requestWorker : AsyncRequestWorker?
-    
+
     var fileWorker : FileWorker?
     let storeFileName : String = "store.json"
     
@@ -28,8 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        requestWorker = AsyncRequestWorker()
-        requestWorker?.reponseDelegate = self
+        AppDelegate.RequestWorker.reponseDelegate = self
         
         fileWorker = FileWorker()
         fileWorker?.fileWorkerDelegate = self
@@ -143,25 +141,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
         
         let from = "https://score.azurewebsites.net/api/login/\( account )/\( password )"
         
-        self.requestWorker?.getResponse(from: from, tag: 1)
+        AppDelegate.RequestWorker.getResponse(from: from, tag: 1)
+        
+        DispatchQueue.main.async {
+            self.btnLogin.isEnabled = false
+        }
+        
     }
     
     func readServiceCategory()  {
         let from = "https://score.azurewebsites.net/api/ServiceCategory"
         
-        self.requestWorker?.getResponse(from: from, tag: 2)
+        AppDelegate.RequestWorker.getResponse(from: from, tag: 2)
     }
     
     func readStore()  {
         let from = "https://score.azurewebsites.net/api/store"
         
-        self.requestWorker?.getResponse(from: from, tag: 3)
+        AppDelegate.RequestWorker.getResponse(from: from, tag: 3)
     }
     
     func receviedReponse(_ sender: AsyncRequestWorker, responseString: String, tag: Int) {
         
+        DispatchQueue.main.async {
+            self.btnLogin.isEnabled = true
+        }
         //print( "\( tag ):\( responseString )" )
-        
         
         switch tag {
         case 1:
@@ -176,7 +181,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
                 if let dataFromString = responseString.data(using: .utf8, allowLossyConversion: false) {
                     
                     let json = try JSON(data: dataFromString)
-                    
                     
                     let sqliteContext = ServiceCategoryContext()
                     sqliteContext.createdTable()
@@ -194,9 +198,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AsyncReponseDe
                         
                     }
                     
-//                    let categories = sqliteContext.readData()
-//                    print(categories)
-                    
+                    let categories = sqliteContext.readData()
+                    print(categories)
                 }
                 
             }catch{

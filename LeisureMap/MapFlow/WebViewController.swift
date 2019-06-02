@@ -20,7 +20,13 @@ class WebViewController: UIViewController
         
         if( message.name == "callbackHandler" ){
             
-            print("\( message.body )")
+            let msg = message.body as? String ?? ""
+            
+            let alert = UIAlertController(title: "訊息", message: msg, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: "Confirm"), style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
         }
         
     }
@@ -31,12 +37,6 @@ class WebViewController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        let url = URL(string: "https://apple.com")
-//        let request = URLRequest(url: url!)
-//        webView.load(request)
-        
         
         let contentController = WKUserContentController()
         
@@ -57,7 +57,6 @@ class WebViewController: UIViewController
         configration.preferences = preferences
         configration.userContentController = contentController
         
-        
         webView = WKWebView(frame: view.bounds, configuration: configration)
         
         webView.uiDelegate = self
@@ -66,7 +65,7 @@ class WebViewController: UIViewController
         self.view.addSubview(webView)
         
         
-        let html : String = "<html><body><button onclick='query()'>Prompt</button><br /><button type='button' onclick='msg()' text='Hi'>Just Alert Hi</button><br /><button type='button' onclick='callNativeApp()' text='Send Message To Native App'>Send Message To Native App</button><p id='demo'></p><script>function query() { var os = prompt('你現在用什麼作業系統', 'iOSAndroid'); if (os != null) { document.getElementById('demo').innerHTML = os + ' is best operation system, in the world';return os;}}function getelement(){return 'value from javascript function';}function msg(){alert('Hi !');}function callNativeApp(){webkit.messageHandlers.callbackHandler.postMessage('AAAAAA');}</script></body></html>"
+        let html : String = "<html><body><button onclick='query()'>Prompt</button><br /><button type='button' onclick='msg()' text='Hi'>Just Alert Hi</button><br /><button type='button' onclick='callNativeApp()' text='Send Message To Native App'>Send Message To Native App</button><p id='demo'></p><script>function query() { var lang = prompt('你現在用什麼程式語言', 'Swift or Kotlin'); if (lang != null) { document.getElementById('demo').innerHTML = lang + ' is the best language in the world';return lang;}}function getelement(){return 'value from javascript function';}function msg(){alert('Hi !');}function callNativeApp(){webkit.messageHandlers.callbackHandler.postMessage('message from js call');}</script></body></html>"
         
         webView.loadHTMLString(html, baseURL: nil)
     }
@@ -86,12 +85,8 @@ class WebViewController: UIViewController
             }
             
         })
-        
-        
     }
     
-    
-
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         
         completionHandler()
@@ -133,7 +128,13 @@ class WebViewController: UIViewController
             (act : UIAlertAction)
             in
             
-            print("\( String(describing: txt?.text ) )")
+            let message =  txt?.text ?? ""
+            
+            print("\( message )")
+            
+            if let input = alert.textFields?.first?.text {
+                completionHandler( input )
+            }
             
         }))
         

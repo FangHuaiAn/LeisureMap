@@ -65,8 +65,7 @@ struct ServiceCategoryContext {
             print("createdTable count:\(count)")
             
         } catch { print(error) }
-        
-        
+
     }
     
     //
@@ -104,39 +103,47 @@ struct ServiceCategoryContext {
     func updateData(serviceId: Int, old_name: String, new_name: String) {
         let currcategories = categories.filter(id == serviceId)
         do {
-            try db.run(currcategories.update(name <- name.replace(old_name, with: new_name)))
-        } catch {
-            print(error)
+            try db.run(
+                currcategories.update(name <- name.replace(old_name, with: new_name))
+            )
         }
-        
+        catch {  print(error) }
     }
     
     //
     func delData(currcategoryIndex: Int) {
         let currcategories = categories.filter(serviceId == currcategoryIndex)
-        do {
-            try db.run(currcategories.delete())
-        } catch {
-            print(error)
-        }
+        
+        do { try db.run(currcategories.delete()) }
+        catch {  print(error) }
     }
     
     //
     func clearAll()  {
         
         let categories = readData()
-        
         var indexes : [Int] = []
         
-        for category in categories{
-            
-            indexes.append(category.Index)
-        }
+        for category in categories{  indexes.append(category.Index) }
         
-        for index in indexes{
-            delData(currcategoryIndex:index )
-        }
-        
+        for index in indexes{  delData(currcategoryIndex:index ) }
     }
+    
+    func dropTable()  {
+        
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL  = dir.appendingPathComponent("db.sqlite3")
+            
+            do {
+                try FileManager.default.removeItem(at: fileURL)
+            } catch let error as NSError {
+                print("Error: \(error.domain)")
+            }
+            
+        }
+    }
+    
 }
 

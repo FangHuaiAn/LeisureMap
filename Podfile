@@ -6,9 +6,10 @@ target 'LeisureMap' do
   use_frameworks!
 
   # Pods for LeisureMap
-  pod 'SQLite.swift', '~> 0.11.5'
+  pod 'SQLite.swift', '~> 0.12.0'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SDWebImage', '~> 4.0'
+  pod 'Alamofire', '~> 5.0.0-beta.5'
 
   target 'LeisureMapTests' do
     inherit! :search_paths

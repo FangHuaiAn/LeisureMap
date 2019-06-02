@@ -35,8 +35,7 @@ class AsyncRequestWorker {
                 
                 let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 let responseString = String( dataString! )
-                
-                
+
                 self.reponseDelegate?.receviedReponse(self, responseString: responseString, tag: tag)
             }
             

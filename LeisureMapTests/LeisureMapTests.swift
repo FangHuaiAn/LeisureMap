@@ -29,8 +29,7 @@ class LeisureMapTests: XCTestCase {
     
     func testInsert() {
         //
-        
-        sqliteWorker?.insertData(_name: "service01", _imagepath: "imagepath")
+        sqliteWorker?.insertData(_serviceId: 1, _name: "service01", _imagepath: "imagepath")
         
         let results = sqliteWorker?.readData()
         
@@ -41,7 +40,7 @@ class LeisureMapTests: XCTestCase {
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            sqliteWorker?.insertData(_name: "service01", _imagepath: "imagepath")
+            sqliteWorker?.insertData(_serviceId: 1, _name: "service01", _imagepath: "imagepath")
             
             _ = sqliteWorker?.readData()
         }
