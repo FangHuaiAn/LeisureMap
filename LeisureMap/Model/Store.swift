@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Store {
+class Store : Equatable {
     
     var ServiceIndex : Int = 0
     var Name : String?
@@ -17,6 +17,9 @@ class Store {
     var Index : Int = 0
     var ImagePath : String?
     
+    static func == (lhs: Store, rhs: Store) -> Bool {
+        return lhs.Name == rhs.Name ? true : false
+    }
 }
 
 class LocationDesc {
